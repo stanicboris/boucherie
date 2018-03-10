@@ -13,6 +13,7 @@ import { Location } from '@angular/common';
 export class StoreDetailComponent implements OnInit {
 
   public store: any;
+  public id: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -21,16 +22,21 @@ export class StoreDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getStore();
+    // this.getStore();
+    this.route.params.subscribe((param: any) => {
+      this.id = +param.id;
+      this.getStore(this.id);
+    });
+
   }
 
-  getStore () {
-    const id = +this.route.snapshot.paramMap.get('id');
+  getStore (id: number) {
     this.api.getStores()
       .subscribe(data => {
-        // console.log(data);
-        this.store = data[id];
+        this.store = data[this.id];
       });
   }
+
+
 
 }

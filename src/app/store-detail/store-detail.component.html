@@ -1,10 +1,17 @@
-<h1>{{store?.Nom}}</h1>
-<ul>
-  <li>{{store?.Libelle}}</li>
-  <li>{{store?.Adresse1}}</li>
-  <li>{{store?.CP_Ville}}</li>
-  <li>{{store?.Telephone}}</li>
-  <li>{{store?.lat}}</li>
-  <li>{{store?.lng}}</li>
-  <li>{{store?.extra}}</li>
-</ul>
+<div class="container">
+  <h1>{{store?.Nom}}</h1>
+  <ul>
+    <li>{{store?.Libelle}}</li>
+    <li>{{store?.Adresse1}}</li>
+    <li>{{store?.CP_Ville}}</li>
+    <li>{{store?.Telephone}}</li>
+    <li>{{store?.lat}}</li>
+    <li>{{store?.lng}}</li>
+    <li>{{store?.extra}}</li>
+  </ul>
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" routerLink="/detail/{{id-1}}" class="btn btn btn-primary">Previous Store</button>
+    <button type="button" routerLink="/stores" class="btn btn-secondary">Back to the Stores</button>
+    <button type="button" routerLink="/detail/{{id+1}}" class="btn btn btn-primary">Next Store</button>
+  </div>
+</div>
