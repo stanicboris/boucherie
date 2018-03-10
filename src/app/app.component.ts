@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from './api.service';
 
 @Component({
   selector: 'app-root',
@@ -7,15 +6,10 @@ import { ApiService } from './api.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private api: ApiService) { }
+  constructor() { }
   title = 'app'; 
-  public stores: any;
 
   ngOnInit() {
-    this.api.getStores()
-      .subscribe(data => {
-        console.log(data);
-        this.stores = data;
-      });
+
   }
 }

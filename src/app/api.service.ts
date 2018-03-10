@@ -12,7 +12,6 @@ export class ApiService {
   getStores() {
     console.log('init stores');
     return this.http.get(this.url);
-
   }
 
 }
