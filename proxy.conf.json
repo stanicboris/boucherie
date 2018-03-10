@@ -1,0 +1,11 @@
+{
+  "/api": {
+    "target": "http://static.singlespot.com/tests/la_boucherie",
+    "secure": true,
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
